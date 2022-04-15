@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Applications>
+		<!-- Win -->
+		<Application
+			Name="XAFDemoTwoWin"
+			FileName="[WinAppBin]\XAFDemoTwo.Win.exe"
+			AdapterAssemblyName="[WinAdapterAssemblyName]"
+			CommunicationPort="4100"/>
+		<!-- Web -->
+		<Application
+			Name="XAFDemoTwoWeb"
+			UseIISExpress="True"
+			Url="http://localhost:4030"
+			PhysicalPath="[WebAppBin]"
+			AdapterFileName="[WebAdapterAssemblyPath]"
+			IgnoreCase="true"/>
+		<!-- For IIS -->
+		<!--
+		<Application
+			Name="XAFDemoTwoWeb"
+			Url="http://localhost/XAFDemoTwo.Web/Default.aspx"
+			AdapterFileName="[WebAdapterAssemblyPath]"
+			IgnoreCase="true"/>
+		-->
+	</Applications>
+	<TestDatabases>
+		<Database xsi:type="TestMSSQLDatabase" Server="(localdb)\mssqllocaldb" DBName="XAFDemoTwoEasyTest"/>
+	</TestDatabases>
+
+	<Aliases>
+		<Alias Name="WinAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WinAdapter.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+		<Alias Name="WebAdapterAssemblyPath" Value="[WebAppBin]\Bin\DevExpress.ExpressApp.EasyTest.SeleniumWebAdapter.v21.2.dll" />
+		<Alias Name="WinAppBin" Value="[ConfigPath]\..\..\XAFDemoTwo.Win\Bin\EasyTest" />
+		<Alias Name="WebAppBin" Value="[ConfigPath]\..\..\XAFDemoTwo.Web" />
+	</Aliases>
+</Options>
