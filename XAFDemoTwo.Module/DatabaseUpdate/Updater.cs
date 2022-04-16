@@ -2,6 +2,7 @@
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Updating;
 using DevExpress.Persistent.BaseImpl;
+using XAFDemoTwo.Module.BusinessObjects;
 using XAFDemoTwo.Module.BusinessObjects.Marketing;
 using XAFDemoTwo.Module.BusinessObjects.Planning;
 
@@ -14,9 +15,23 @@ namespace XAFDemoTwo.Module.DatabaseUpdate
         }
         public override void UpdateDatabaseAfterUpdateSchema() {
             base.UpdateDatabaseAfterUpdateSchema();
-            
 
-            
+            //From section "Supply Initial Data (XPO)"
+            if (ObjectSpace.CanInstantiate(typeof(Contact)))
+            {
+                Contact contactMary = ObjectSpace.FirstOrDefault<Contact>(c => c.FirstName == "Mary" && c.LastName == "Tellitson");
+                if (contactMary == null)
+                {
+                    contactMary = ObjectSpace.CreateObject<Contact>();
+                    contactMary.FirstName = "Mary";
+                    contactMary.LastName = "Tellitson";
+                    contactMary.Email = "tellitson@example.com";
+                    contactMary.Birthday = new DateTime(1980, 11, 27);
+                }
+            }
+            //...
+
+
             if (ObjectSpace.CanInstantiate(typeof(Person)))
             {
                 Person person = ObjectSpace.FirstOrDefault<Person>(p => p.FirstName == "John" && p.LastName == "Nilsen");

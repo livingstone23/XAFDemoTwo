@@ -14,6 +14,9 @@ using System.Text;
 
 namespace XAFDemoTwo.Module.BusinessObjects
 {
+
+
+
     //[DefaultClassOptions]
     ////[ImageName("BO_Contact")]
     ////[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
