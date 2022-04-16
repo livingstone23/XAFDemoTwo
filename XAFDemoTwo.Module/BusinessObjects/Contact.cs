@@ -104,12 +104,12 @@ namespace XAFDemoTwo.Module.BusinessObjects
         }
 
 
-        private Department department;
-        public Department Department
-        {
-            get { return department; }
-            set { SetPropertyValue(nameof(Department), ref department, value); }
-        }
+        //private Department department;
+        //public Department Department
+        //{
+        //    get { return department; }
+        //    set { SetPropertyValue(nameof(Department), ref department, value); }
+        //}
         private Position position;
         public Position Position
         {
@@ -127,6 +127,20 @@ namespace XAFDemoTwo.Module.BusinessObjects
                 return GetCollection<DemoTask>(nameof(Tasks));
             }
         }
+
+        //...Set a One-to-Many Relationship (XPO)
+        private Department department;
+        [Association("Department-Contacts")]
+        public Department Department
+        {
+            get { return department; }
+            set { SetPropertyValue(nameof(Department), ref department, value); }
+        }
+
+
+
+
+
 
 
     }
@@ -154,6 +168,18 @@ namespace XAFDemoTwo.Module.BusinessObjects
             get { return office; }
             set { SetPropertyValue(nameof(Office), ref office, value); }
         }
+
+
+        //Set a One-to-Many Relationship (XPO)
+        [Association("Department-Contacts")]
+        public XPCollection<Contact> Contacts
+        {
+            get
+            {
+                return GetCollection<Contact>(nameof(Contacts));
+            }
+        }
+
     }
 
 
