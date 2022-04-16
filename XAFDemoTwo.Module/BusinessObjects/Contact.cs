@@ -216,13 +216,28 @@ namespace XAFDemoTwo.Module.BusinessObjects
     [System.ComponentModel.DefaultProperty(nameof(Title))]
     public class Position : BaseObject
     {
+        //public Position(Session session) : base(session) { }
+        //private string title;
+        //public string Title
+        //{
+        //    get { return title; }
+        //    set { SetPropertyValue(nameof(Title), ref title, value); }
+        //}
+
+
+
         public Position(Session session) : base(session) { }
         private string title;
+        //Implement Property Value Validation in Code (XPO)
+        [RuleRequiredField(DefaultContexts.Save)]
         public string Title
         {
             get { return title; }
             set { SetPropertyValue(nameof(Title), ref title, value); }
         }
+
+
+
     }
 
 
