@@ -116,6 +116,19 @@ namespace XAFDemoTwo.Module.BusinessObjects
             get { return position; }
             set { SetPropertyValue(nameof(Position), ref position, value); }
         }
+
+
+        //...Set a Many-to-Many Relationship (XPO)
+        [Association("Contact-DemoTask")]
+        public XPCollection<DemoTask> Tasks
+        {
+            get
+            {
+                return GetCollection<DemoTask>(nameof(Tasks));
+            }
+        }
+
+
     }
 
 
@@ -157,6 +170,26 @@ namespace XAFDemoTwo.Module.BusinessObjects
             set { SetPropertyValue(nameof(Title), ref title, value); }
         }
     }
+
+
+
+    [DefaultClassOptions]
+    [ModelDefault("Caption", "Task")]
+    public class DemoTask : Task
+    {
+        public DemoTask(Session session) : base(session) { }
+        [Association("Contact-DemoTask")]
+        public XPCollection<Contact> Contacts
+        {
+            get
+            {
+                return GetCollection<Contact>(nameof(Contacts));
+            }
+        }
+    }
+
+
+
 }
 
 
