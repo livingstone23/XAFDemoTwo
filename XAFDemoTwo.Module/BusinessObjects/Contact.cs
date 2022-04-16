@@ -203,6 +203,15 @@ namespace XAFDemoTwo.Module.BusinessObjects
     [ModelDefault("Caption", "Task")]
     public class DemoTask : Task
     {
+        //Initialize a Property After Creating an Object (XPO)
+        public override void AfterConstruction()
+        {
+            base.AfterConstruction();
+            Priority = Priority.Normal;
+        }
+
+
+
         public DemoTask(Session session) : base(session) { }
         [Association("Contact-DemoTask")]
         public XPCollection<Contact> Contacts
@@ -212,6 +221,26 @@ namespace XAFDemoTwo.Module.BusinessObjects
                 return GetCollection<Contact>(nameof(Contacts));
             }
         }
+
+
+        // Initialize a Property After Creating an Object (XPO)
+        private Priority priority;
+        public Priority Priority
+        {
+            get { return priority; }
+            set
+            {
+                SetPropertyValue(nameof(Priority), ref priority, value);
+            }
+        }
+
+    }
+
+    public enum Priority
+    {
+        Low = 0,
+        Normal = 1,
+        High = 2
     }
 
 
