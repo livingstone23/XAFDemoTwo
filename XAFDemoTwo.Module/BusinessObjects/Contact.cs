@@ -128,6 +128,7 @@ namespace XAFDemoTwo.Module.BusinessObjects
             }
         }
 
+
         //...Set a One-to-Many Relationship (XPO)
         private Department department;
         [Association("Department-Contacts")]
@@ -138,8 +139,35 @@ namespace XAFDemoTwo.Module.BusinessObjects
         }
 
 
+        //Implement Dependent Reference Properties (XPO)
+        //private Contact manager;
+        //[DataSourceProperty("Department.Contacts")]
+        //public Contact Manager
+        //{
+        //    get { return manager; }
+        //    set { SetPropertyValue(nameof(Manager), ref manager, value); }
+        //}
+
+        //Implement Dependent Reference Properties (XPO)
+        //private Contact manager;
+        //[DataSourceProperty("Department.Contacts")]
+        //[DataSourceCriteria("Position.Title = 'Manager' AND Oid != '@This.Oid'")]
+        //public Contact Manager
+        //{
+        //    get { return manager; }
+        //    set { SetPropertyValue(nameof(Manager), ref manager, value); }
+        //}
 
 
+        //Implement Dependent Reference Properties (XPO)
+        private Contact manager;
+        [DataSourceProperty("Department.Contacts", DataSourcePropertyIsNullMode.SelectAll)]
+        [DataSourceCriteria("Position.Title = 'Manager' AND Oid != '@This.Oid'")]
+        public Contact Manager
+        {
+            get { return manager; }
+            set { SetPropertyValue(nameof(Manager), ref manager, value); }
+        }
 
 
 
