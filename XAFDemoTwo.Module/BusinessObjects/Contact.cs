@@ -103,6 +103,19 @@ namespace XAFDemoTwo.Module.BusinessObjects
             set { SetPropertyValue(nameof(Notes), ref notes, value); }
         }
 
+
+        private Department department;
+        public Department Department
+        {
+            get { return department; }
+            set { SetPropertyValue(nameof(Department), ref department, value); }
+        }
+        private Position position;
+        public Position Position
+        {
+            get { return position; }
+            set { SetPropertyValue(nameof(Position), ref position, value); }
+        }
     }
 
 
@@ -111,6 +124,39 @@ namespace XAFDemoTwo.Module.BusinessObjects
 
 
 
+    [DefaultClassOptions]
+    [System.ComponentModel.DefaultProperty(nameof(Title))]
+    public class Department : BaseObject
+    {
+        public Department(Session session) : base(session) { }
+        private string title;
+        public string Title
+        {
+            get { return title; }
+            set { SetPropertyValue(nameof(Title), ref title, value); }
+        }
+        private string office;
+        public string Office
+        {
+            get { return office; }
+            set { SetPropertyValue(nameof(Office), ref office, value); }
+        }
+    }
+
+
+
+    [DefaultClassOptions]
+    [System.ComponentModel.DefaultProperty(nameof(Title))]
+    public class Position : BaseObject
+    {
+        public Position(Session session) : base(session) { }
+        private string title;
+        public string Title
+        {
+            get { return title; }
+            set { SetPropertyValue(nameof(Title), ref title, value); }
+        }
+    }
 }
 
 
