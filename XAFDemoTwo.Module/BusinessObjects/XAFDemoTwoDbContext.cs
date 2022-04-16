@@ -11,6 +11,7 @@ using DevExpress.Persistent.BaseImpl.EF;
 using DevExpress.ExpressApp.Design;
 using DevExpress.ExpressApp.EF.DesignTime;
 using DevExpress.Persistent.BaseImpl.EF.PermissionPolicy;
+using XAFDemoTwo.Module.BusinessObjects.Marketing;
 
 namespace XAFDemoTwo.Module.BusinessObjects {
 	public class XAFDemoTwoContextInitializer : DbContextTypesInfoInitializerBase {
@@ -30,5 +31,9 @@ namespace XAFDemoTwo.Module.BusinessObjects {
 		public XAFDemoTwoDbContext() {
 		}
 		public DbSet<ModuleInfo> ModulesInfo { get; set; }
+		public DbSet<Customer> Customer { get; set; }
+		public DbSet<Testimonial> Testimonial { get; set; }
+
+
 	}
 }

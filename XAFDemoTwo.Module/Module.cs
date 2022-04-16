@@ -28,9 +28,9 @@ namespace XAFDemoTwo.Module {
 			DevExpress.ExpressApp.SystemModule.ResetViewSettingsController.DefaultAllowRecreateView = false;
             // Uncomment this code to delete and recreate the database each time the data model has changed.
             // Do not use this code in a production environment to avoid data loss.
-            // #if DEBUG
-            // Database.SetInitializer(new DropCreateDatabaseIfModelChanges<XAFDemoTwoDbContext>());
-            // #endif 
+#if DEBUG
+            Database.SetInitializer(new DropCreateDatabaseIfModelChanges<XAFDemoTwoDbContext>());
+#endif
         }
         public XAFDemoTwoModule() {
             InitializeComponent();

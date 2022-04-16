@@ -1,5 +1,18 @@
-﻿<?xml version="1.0" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="XAFDemoTwo">
-  <Views>
-  </Views>
+  <BOModel>
+    <Class Name="XAFDemoTwo.Module.BusinessObjects.Marketing.Customer" ImageName="BO_Employee" />
+  </BOModel>
+  <NavigationItems NavigationStyle="Accordion">
+    <Items>
+      <Item Id="Planning">
+        <Items>
+          <Item Id="@f41446e7-3eb6-40dc-b68d-904f586a5214" Caption="Employee" ImageName="BO_Employee" ViewId="Person_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="21.2.6.0" IsNewNode="True" />
+  </SchemaModules>
 </Application>
