@@ -72,6 +72,7 @@
     <Reference Include="DevExpress.Xpo.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -125,6 +126,10 @@
     </Compile>
     <Compile Include="Controllers\TaskActionsController.Designer.cs">
       <DependentUpon>TaskActionsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\WinDateEditCalendarController.cs" />
+    <Compile Include="Controllers\WinDateEditCalendarController.Designer.cs">
+      <DependentUpon>WinDateEditCalendarController.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
