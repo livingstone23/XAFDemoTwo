@@ -277,6 +277,18 @@ namespace XAFDemoTwo.Module.BusinessObjects
             }
         }
 
+
+        //Add a Simple Action using an Attribute -1.1
+        [Action(ToolTip = "Postpone the task to the next day")]
+        public void Postpone()
+        {
+            if (DueDate == DateTime.MinValue)
+            {
+                DueDate = DateTime.Now;
+            }
+            DueDate = DueDate + TimeSpan.FromDays(1);
+        }
+
     }
 
     public enum Priority

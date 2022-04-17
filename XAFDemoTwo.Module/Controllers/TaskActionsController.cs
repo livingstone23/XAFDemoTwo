@@ -64,22 +64,22 @@ namespace XAFDemoTwo.Module.Controllers
             }
             else
                 if (e.SelectedChoiceActionItem.ParentItem == setStatusItem)
-            {
-                foreach (Object obj in objectsToProcess)
                 {
-                    DemoTask objInNewObjectSpace = (DemoTask)objectSpace.GetObject(obj);
-                    objInNewObjectSpace.Status = (DevExpress.Persistent.Base.General.TaskStatus)(TaskStatus)e.SelectedChoiceActionItem.Data;
+                    foreach (Object obj in objectsToProcess)
+                    {
+                        DemoTask objInNewObjectSpace = (DemoTask)objectSpace.GetObject(obj);
+                        objInNewObjectSpace.Status = (DevExpress.Persistent.Base.General.TaskStatus)(TaskStatus)e.SelectedChoiceActionItem.Data;
+                    }
                 }
-            }
-            if (View is DetailView && ((DetailView)View).ViewEditMode == ViewEditMode.View)
-            {
-                objectSpace.CommitChanges();
-            }
-            if (View is ListView)
-            {
-                objectSpace.CommitChanges();
-                View.ObjectSpace.Refresh();
-            }
+                if (View is DetailView && ((DetailView)View).ViewEditMode == ViewEditMode.View)
+                {
+                    objectSpace.CommitChanges();
+                }
+                if (View is ListView)
+                {
+                    objectSpace.CommitChanges();
+                    View.ObjectSpace.Refresh();
+                }
         }
 
 
