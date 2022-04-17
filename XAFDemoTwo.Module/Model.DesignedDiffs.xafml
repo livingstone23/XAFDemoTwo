@@ -15,9 +15,15 @@
   </ActionDesign>
   <BOModel>
     <Class Name="XAFDemoTwo.Module.BusinessObjects.Contact" ObjectCaptionFormat="{0:FullName} from the {0:Department}" />
+    <Class Name="XAFDemoTwo.Module.BusinessObjects.Department" ImageName="BO_Position" />
     <Class Name="XAFDemoTwo.Module.BusinessObjects.Marketing.Customer" ImageName="BO_Employee" />
+    <Class Name="XAFDemoTwo.Module.BusinessObjects.Payment">
+      <OwnMembers>
+        <Member Name="Rate" ImmediatePostData="True" />
+      </OwnMembers>
+    </Class>
   </BOModel>
-  <NavigationItems NavigationStyle="Accordion">
+  <NavigationItems NavigationStyle="TreeList">
     <Items>
       <Item Id="Planning">
         <Items>
