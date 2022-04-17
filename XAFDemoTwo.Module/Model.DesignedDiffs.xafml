@@ -14,6 +14,7 @@
     </ActionToContainerMapping>
   </ActionDesign>
   <BOModel>
+    <Class Name="XAFDemoTwo.Module.BusinessObjects.Contact" ObjectCaptionFormat="{0:FullName} from the {0:Department}" />
     <Class Name="XAFDemoTwo.Module.BusinessObjects.Marketing.Customer" ImageName="BO_Employee" />
   </BOModel>
   <NavigationItems NavigationStyle="Accordion">
