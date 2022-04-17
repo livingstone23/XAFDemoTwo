@@ -1,5 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="XAFDemoTwo">
+<Application Title="XAFDemoTwo" Logo="ExpressAppLogo">
+  <ActionDesign>
+    <ActionToContainerMapping>
+      <ActionContainer Id="RecordEdit">
+        <ActionLink ActionId="ClearTasksAction" IsNewNode="True" />
+      </ActionContainer>
+      <ActionContainer Id="View">
+        <ActionLink ActionId="ClearTasksAction" Removed="True" />
+      </ActionContainer>
+    </ActionToContainerMapping>
+  </ActionDesign>
   <BOModel>
     <Class Name="XAFDemoTwo.Module.BusinessObjects.Marketing.Customer" ImageName="BO_Employee" />
   </BOModel>
