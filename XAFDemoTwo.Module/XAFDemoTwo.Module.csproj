@@ -99,6 +99,12 @@
     <Compile Include="BusinessObjects\Contact.cs" />
     <Compile Include="BusinessObjects\Marketing.cs" />
     <Compile Include="BusinessObjects\Planning.cs" />
+    <Compile Include="Controllers\ClearContactTasksController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\ClearContactTasksController.Designer.cs">
+      <DependentUpon>ClearContactTasksController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\ProjectTaskController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\ClearContactTasksController.resx">
+      <DependentUpon>ClearContactTasksController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Module.resx">
       <DependentUpon>Module.cs</DependentUpon>
