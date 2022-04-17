@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="XAFDemoTwo" Logo="ExpressAppLogo">
   <ActionDesign>
+    <Actions>
+      <Action Id="ClearTasksAction" ConfirmationMessage="Are you sure you want to clear the {0}'s tasks list?" Shortcut="Control+Shift+C" ToolTip="Clear the current Contact's tasks" />
+    </Actions>
     <ActionToContainerMapping>
       <ActionContainer Id="RecordEdit">
         <ActionLink ActionId="ClearTasksAction" IsNewNode="True" />
