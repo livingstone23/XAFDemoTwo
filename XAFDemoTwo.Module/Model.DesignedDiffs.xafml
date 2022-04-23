@@ -39,6 +39,9 @@
       </OwnMembers>
     </Class>
   </BOModel>
+  <CreatableItems>
+    <CreatableItem ClassName="DevExpress.Persistent.BaseImpl.Event" ImageName="BO_Scheduler" Caption="Schedule Event" IsNewNode="True" />
+  </CreatableItems>
   <NavigationItems NavigationStyle="TreeList">
     <Items>
       <Item Id="Planning">
