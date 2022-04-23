@@ -65,4 +65,61 @@
       <RuleCriteria Id="TaskIsNotStarted" Name="TaskIsNotStarted" TargetContextIDs="MarkCompleted" Criteria="Status!='NotStarted'" TargetType="XAFDemoTwo.Module.BusinessObjects.DemoTask" CustomMessageTemplate="Cannot set the task as completed because it has not started" IsNewNode="True" />
     </Rules>
   </Validation>
+  <Views>
+    <DetailView Id="Contact_DetailView">
+      <Items>
+        <PropertyEditor Id="Department.Office" PropertyName="Department.Office" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="60.653188180404356">
+            <LayoutGroup Id="Contact" RelativeSize="43.333333333333336">
+              <LayoutGroup Id="Contact_col1" RelativeSize="50">
+                <LayoutItem Id="WebPageAddress" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="NickName" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="SpouseName" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="TitleOfCourtesy" RelativeSize="41.1764705882353" />
+              </LayoutGroup>
+              <LayoutGroup Id="Contact_col2" RelativeSize="50">
+                <LayoutItem Id="Anniversary" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="Position" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="Department" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="Manager" ViewItem="Manager" Index="3" RelativeSize="17.647058823529413" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="Department.Office" ViewItem="Department.Office" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Person" RelativeSize="28.974358974358974">
+              <LayoutGroup Id="Person_col1" RelativeSize="50">
+                <LayoutItem Id="FirstName" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="LastName" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="MiddleName" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+              <LayoutGroup Id="Person_col2" RelativeSize="50">
+                <LayoutItem Id="Birthday" RelativeSize="36.363636363636367" />
+                <LayoutItem Id="FullName" RelativeSize="27.272727272727273" />
+                <LayoutItem Id="Email" RelativeSize="36.363636363636367" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Party" RelativeSize="27.692307692307693">
+              <LayoutItem Id="Photo" RelativeSize="27.777777777777779" />
+              <LayoutItem Id="Address1" RelativeSize="22.222222222222221" />
+              <LayoutItem Id="Address2" RelativeSize="22.222222222222221" />
+              <LayoutItem Id="DisplayName" RelativeSize="27.777777777777779" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="19.595645412130636">
+            <LayoutItem Id="Notes" RelativeSize="100" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="19.751166407465007">
+            <LayoutGroup Id="Tasks" RelativeSize="100">
+              <LayoutItem Id="Tasks" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="PhoneNumbers" RelativeSize="100">
+              <LayoutItem Id="PhoneNumbers" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
 </Application>
