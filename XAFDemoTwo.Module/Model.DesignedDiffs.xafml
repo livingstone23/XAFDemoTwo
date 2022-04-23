@@ -23,6 +23,7 @@
       <OwnMembers>
         <Member Name="DueDate" DisplayFormat="{0:D}" />
         <Member Name="PercentCompleted" DisplayFormat="{0:N0}%" />
+        <Member Name="Subject" RowCount="2" Size="200" />
       </OwnMembers>
     </Class>
     <Class Name="XAFDemoTwo.Module.BusinessObjects.Contact" ObjectCaptionFormat="{0:FullName} from the {0:Department}">
