@@ -44,6 +44,11 @@
   </CreatableItems>
   <NavigationItems NavigationStyle="TreeList">
     <Items>
+      <Item Id="Default">
+        <Items>
+          <Item Id="Note" ImageName="BO_Note" ViewId="Note_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
       <Item Id="Planning">
         <Items>
           <Item Id="@f41446e7-3eb6-40dc-b68d-904f586a5214" Caption="Employee" ImageName="BO_Employee" ViewId="Person_ListView" IsNewNode="True" />
