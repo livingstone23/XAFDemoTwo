@@ -130,12 +130,33 @@ namespace XAFDemoTwo.Module.BusinessObjects
 
 
         //...Set a One-to-Many Relationship (XPO)
+        //private Department department;
+        //[Association("Department-Contacts")]
+        //public Department Department
+        //{
+        //    get { return department; }
+        //    set { SetPropertyValue(nameof(Department), ref department, value); }
+        //}
+
+
+        //Filter Lookup Editor Data Source
         private Department department;
-        [Association("Department-Contacts")]
+        [Association("Department-Contacts", typeof(Department)), ImmediatePostData]
         public Department Department
         {
             get { return department; }
-            set { SetPropertyValue(nameof(Department), ref department, value); }
+            set
+            {
+                SetPropertyValue(nameof(Department), ref department, value);
+                if (!IsLoading)
+                {
+                    Position = null;
+                    if (Manager != null && Manager.Department != value)
+                    {
+                        Manager = null;
+                    }
+                }
+            }
         }
 
 
@@ -208,6 +229,14 @@ namespace XAFDemoTwo.Module.BusinessObjects
             }
         }
 
+
+        //Filter Lookup Editor Data Source
+        [Association("Departments-Positions")]
+        public XPCollection<Position> Positions
+        {
+            get { return GetCollection<Position>(nameof(Positions)); }
+        }
+
     }
 
 
@@ -236,6 +265,14 @@ namespace XAFDemoTwo.Module.BusinessObjects
             set { SetPropertyValue(nameof(Title), ref title, value); }
         }
 
+
+
+        //Filter Lookup Editor Data Source
+        [Association("Departments-Positions")]
+        public XPCollection<Department> Departments
+        {
+            get { return GetCollection<Department>(nameof(Departments)); }
+        }
 
 
     }
